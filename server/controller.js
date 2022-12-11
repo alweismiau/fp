@@ -1,11 +1,21 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { db, auth } from "./config.js";
-const router = express.Router();
-router.use(bodyParser.json());
-import { increment } from "firebase/firestore";
+// const app = express.app();
+const app = express();
+app.use(bodyParser.json());
+// app.use(cors());
+// app.use(bodyParser.json());
+// import {
+//   increment
+// } from "firebase/firestore";
+import{
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
 // show all
-router.get("/all", (req, res) => {
+app.get("/all", (req, res) => {
   try {
     db.collection("links")
       .get()
@@ -22,7 +32,7 @@ router.get("/all", (req, res) => {
 });
 
 // show by shortedLink
-router.get("/show/:shortLink", (req, res) => {
+app.get("/show/:shortLink", (req, res) => {
   try {
     db.collection("links")
       .get()
@@ -44,8 +54,30 @@ router.get("/show/:shortLink", (req, res) => {
   }
 });
 
+//regis
+app.post("/register", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await createUserWithEmailAndPassword(auth, email, password);
+    res.status(200).json({ message: "User created successfully" });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await signInWithEmailAndPassword(auth, email, password);
+    res.status(200).json({ message: "User logged in successfully" });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+//login
+
 // add link
-router.post("/add", (req, res) => {
+app.post("/add", (req, res) => {
   const { destination, shortLink, title } = req.body;
 
   try {
@@ -68,7 +100,7 @@ router.post("/add", (req, res) => {
 });
 
 // update link
-router.post("/update/:id", (req, res) => {
+app.post("/update/:id", (req, res) => {
   try {
     const { destination, shortLink } = req.body;
     db.collection("links").doc(req.params.id).update({
@@ -88,7 +120,7 @@ router.post("/update/:id", (req, res) => {
 });
 
 // delete link
-router.delete("/delete/:id", (req, res) => {
+app.delete("/delete/:id", (req, res) => {
   try {
     db.collection("links")
       .doc(req.params.id)
@@ -107,23 +139,4 @@ router.delete("/delete/:id", (req, res) => {
   }
 });
 
-// //Count Click
-// router.post("/click/:id", (req, res) => {
-//   try {
-//     db.collection("links")
-//       .doc(req.params.id)
-//       .update({
-//         clickCount: increment(1),
-//       });
-//     res.send({
-//       status: true,
-//       message: "Data berhasil disimpan",
-//     });
-//   } catch (error) {
-//     res.send({
-//       status: false,
-//       message: "Data gagal disimpan",
-//     });
-//   }
-// });
-export default router;
+export default app;
