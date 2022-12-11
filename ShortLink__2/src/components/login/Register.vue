@@ -24,7 +24,7 @@
         </router-link>
       </div>
 
-      <form class="pb-2 text-center">
+      <form class="pb-3 text-center">
         <div class="pt-2">
           <input
             placeholder="Email"
@@ -44,8 +44,8 @@
         <a
         href="#"
               role="button"
-          class="p-2 bg-blue-700 font-bold rounded-md text-center mt-4 px-4"
-          @click="App.addRegister(App.input.user)"
+              class="p-2 bg-orange-600 font-bold rounded-md text-center mt-4 px-4"
+              @click="App.addRegister(App.input.user)"
         >
           Daftar
         </a>
@@ -79,49 +79,23 @@ export default {
 }
 </script>
 
-<!-- <template>
-    <div class="mt-8">
-        <div class="lg:col-span-2">
-          <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-              
-              <div class="md:col-span-5">
-                  <label for="email">Email</label>
-                  <input type="text" name="email" id="email" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" 
-                  v-model="App.input.user.email" placeholder="email@domain.com" />
-                </div>
-                
-                <div class="md:col-span-5">
-                  <label for="password">Password</label>
-                  <input type="password" name="password" id="password" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" 
-                  v-model="App.input.user.password" />
-                </div>
-
-            <div class="md:col-span-5 text-right">
-              <div class="inline-flex items-end">
-                <button @click="App.addRegister(App.input.user)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
-              </div>
-            </div>
-            <router-link
-                to="/login"
-                class="bg-yellow-400 p-2 rounded-md text-black"
-                >
-                cancel</router-link
-                >
-          </div>
-        </div>
-    </div>
-</template>
-
-<script>
-import {useApp} from '../../stores/index';
-export default {
-  setup() {
-    const App = useApp();
-    return {
-      App,
-    }
-  },
-  created() {
-  }
+<style>
+body {
+  background-color: #8cb68c;
 }
-</script> -->
+.my-2 {
+  font-size:medium;
+}
+.pt-2 {
+  font-size: small;
+}
+.p-2 {
+  font-size: small;
+}
+.border {
+  font-size: small;
+}
+.pb-3 {
+  padding-top: 20px;
+}
+</style>

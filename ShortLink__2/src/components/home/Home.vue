@@ -1,14 +1,15 @@
 <template>
   <div>
-    <nav class="navbar" style="background-color: #8cb68c">
-      <div class="flex justify-between px-36 py-2">
-        <a class="navbar-brand flex items-center" href="#">
+      <a href="https://front.codes/" class="logo" target="_blank"> </a>
+      <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
+            width="30"
+            height="30"
             fill="currentColor"
-            class="bi bi-link mr-3 text-white"
+            class="bi bi-link"
             viewBox="0 0 16 16"
           >
             <path
@@ -18,41 +19,49 @@
               d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"
             />
           </svg>
-          <span class="text-white font-bold text-xl"> a.nak </span>
+          a.nak
         </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
     <div class="card-3d-wrap mx-auto">
-      <div class="card-3d-wrapper">
-        <div class="card-front">
-          <div class="center-wrap">
-            <div class="section text-center">
-              <h4 class="mb-4 pb-3 text-black text-2xl font-mono">
-                Welcome User!
-              </h4>
-              <div class="my-5">
-                <router-link
-                  to="/login"
-                  class="bg-blue-700 hover:bg-blue-800 py-2 px-4 mr-2 text-lg font-bold rounded-md text-white"
-                  >Login</router-link
-                >
-                <router-link
-                  to="/register"
-                  class="bg-yellow-400 hover:bg-yellow-500 py-2 px-4 font-bold text-lg rounded-md text-black"
-                  >Register</router-link
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3 text-black">Welcome User!</h4>
+                      <div class="my-5">
+                        <router-link to="/login" class="bg-blue-400 p-2 rounded-md text-black"
+                          >Login</router-link
+                        >
+                        <router-link
+                          to="/register"
+                          class="bg-yellow-400 p-2 rounded-md text-black"
+                          >Register</router-link
+                        >
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+  </div>
   </div>
 </template>
 
 <script>
-export default {};
+
+export default {
+  
+}
 </script>
 
 <style>

@@ -43,8 +43,8 @@
         <a
         href="#"
               role="button"
-          class="p-2 bg-blue-700 font-bold rounded-md text-center mt-4 px-4"
-          @click="App.addLogin(App.input.user)"
+              class="p-2 bg-green-700 font-bold rounded-md text-center mt-4 px-4"
+              @click="App.addLogin(App.input.user)"
         >
           Login
       </a>
@@ -80,8 +80,6 @@ export default {
 </script>
 
 <style>
-/* 
-/* Please ❤ this if you like it! */
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 /* body {
   font-family: "Poppins", sans-serif;
@@ -125,5 +123,11 @@ h6 span {
 }
 .full-height {
   min-height: 100vh;
+}
+.my-2 {
+  font-size:medium;
+}
+.p-2 {
+  font-size: small;
 }
 </style>
