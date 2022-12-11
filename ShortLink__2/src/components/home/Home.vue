@@ -39,12 +39,7 @@
                       <h4 class="mb-4 pb-3 text-black">Welcome User!</h4>
                       <div class="my-5">
                         <router-link to="/login" class="bg-blue-400 p-2 rounded-md text-black"
-                          >Login</router-link
-                        >
-                        <router-link
-                          to="/register"
-                          class="bg-yellow-400 p-2 rounded-md text-black"
-                          >Register</router-link
+                          >Get Started</router-link
                         >
                       </div>
                       
