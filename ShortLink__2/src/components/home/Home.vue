@@ -1,15 +1,14 @@
 <template>
   <div>
-      <a href="https://front.codes/" class="logo" target="_blank"> </a>
-      <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar" style="background-color: #8cb68c">
+      <div class="flex justify-between px-36 py-2">
+        <a class="navbar-brand flex items-center" href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
+            width="40"
+            height="40"
             fill="currentColor"
-            class="bi bi-link"
+            class="bi bi-link mr-3 text-white"
             viewBox="0 0 16 16"
           >
             <path
@@ -19,49 +18,41 @@
               d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"
             />
           </svg>
-          a.nak
+          <span class="text-white font-bold text-xl"> a.nak </span>
         </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
 
     <div class="card-3d-wrap mx-auto">
-              <div class="card-3d-wrapper">
-                <div class="card-front">
-                  <div class="center-wrap">
-                    <div class="section text-center">
-                      <h4 class="mb-4 pb-3 text-black">Welcome User!</h4>
-                      <div class="my-5">
-                        <router-link to="/login" class="bg-blue-400 p-2 rounded-md text-black"
-                          >Get Started</router-link
-                        >
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-                </div>
-
-  </div>
+      <div class="card-3d-wrapper">
+        <div class="card-front">
+          <div class="center-wrap">
+            <div class="section text-center">
+              <h4 style="font-size: 30px" class="mb-5 pb-3 text-black font-bold text-xl">
+                Welcome User!
+              </h4>
+              <div class="my-5">
+                <router-link
+                  to="/login"
+                  style="font-size:medium; font-family:'Poppins'; box-shadow:3px 4px grey;"
+                  class="bg-green-500 hover:bg-white-500 py-2 px-7 mr-3 text-l rounded-md text-white"
+                  >Get Started</router-link
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-
-export default {
-  
-}
+export default {};
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
-
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -94,6 +85,9 @@ h6 span {
   padding: 0 20px;
   text-transform: uppercase;
   font-weight: 700;
+}
+.my-5 {
+  border-radius: 5px;
 }
 .section {
   position: relative;
@@ -128,7 +122,10 @@ h6 span {
   transform-style: preserve-3d;
   transition: all 600ms ease-out;
 }
-.card-front,
+.card-front, 
+/* {
+  background-color: #537155;
+} */
 .card-back {
   width: 100%;
   height: 100%;
@@ -158,7 +155,6 @@ h6 span {
   z-index: 20;
   display: block;
 }
-
 .form-group {
   position: relative;
   display: block;
@@ -201,7 +197,6 @@ h6 span {
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-
 .form-group input:-ms-input-placeholder {
   color: #c4c3ca;
   opacity: 0.7;
@@ -246,7 +241,6 @@ h6 span {
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-
 .btn {
   border-radius: 4px;
   height: 44px;
@@ -286,7 +280,6 @@ h6 span {
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
 }
-
 .logo {
   position: absolute;
   top: 30px;
