@@ -1,14 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { db, auth } from "./config.js";
-// const app = express.app();
 const app = express();
 app.use(bodyParser.json());
-// app.use(cors());
-// app.use(bodyParser.json());
-// import {
-//   increment
-// } from "firebase/firestore";
+import {
+  increment
+} from "firebase/firestore";
 import{
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

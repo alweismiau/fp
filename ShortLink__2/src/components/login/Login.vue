@@ -61,7 +61,6 @@
 
 <script>
 import {useApp} from '../../stores/index';
-// import { useRouter } from "vue-router";
 
 export default {
   setup() {
@@ -69,10 +68,6 @@ export default {
     return {
       App,
     }
-    // const login = (useRouter) => {
-    //     router.push({ name: "dashboard"});
-    //   };
-    //   return { login };
   },
   created() {
   }
